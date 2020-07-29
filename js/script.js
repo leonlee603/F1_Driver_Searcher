@@ -4,7 +4,7 @@ $("#search").on("keyup", function() {
     var myExp = new RegExp(searchInput, "i"); // Concert to regular expression for condition check.
     $.getJSON("json/data.json", function (data) {
         var output = '<ul class="searchresult">';
-        $.each(data, function (key, value) {
+        $.each(data, function (key, value) { // Key is the index and value is the object in the list in json file.
             if ((value.name.search(myExp) != -1 || value.bio.search(myExp) != -1 || value.team.search(myExp) != -1)) {
                 output += '<li>';
                 output += '<h2>' + value.name + '  (' + value.team + ') ' + '</h2>';
